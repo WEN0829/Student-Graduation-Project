@@ -18,6 +18,7 @@ import tensorflow as tf
 currentDateAndTime = datetime.now()
 sys.path.append('CSRNet-pytorch')
 from model import CSRNet
+import json
 def blur(frame,kernel_size):
     b,g,r=cv2.split(frame)
     b=tf.constant(b,dtype=tf.float32)
@@ -44,7 +45,8 @@ transform=transforms.Compose([
                        transforms.ToTensor(),transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225]),
                    ])
-
+with open('live_information.json', 'r', encoding='utf-8') as file:
+    data = json.load(file)
 model1 = CSRNet()
 
 checkpoint = torch.load('CSRNet-pytorch/weights.pth', map_location="cpu")
@@ -52,7 +54,7 @@ model1.load_state_dict(checkpoint)
 model = YOLO("yolov8m.pt")
 
 # YouTube 直播影片的網址
-url = "https://www.youtube.com/watch?v=1lzlw6f3zZ8&list=PLDm4hXBol5DE9QmiOdgyzYmS2jRzenhUv&index=263"
+url = "https://www.youtube.com/watch?v=fjhg3gAnMFg&list=PLlBCNJxYNaFzdUPNDmPbe4uXftZ8octo2&index=65"
 # 取得直播影片的串流
 streams = streamlink.streams(url)
 # 選擇最佳品質的串流
@@ -60,16 +62,14 @@ stream_url = streams["best"].url
 # 開啟影片串流
 cap = cv2.VideoCapture(stream_url)
 ret, frame = cap.read()
+print(frame.shape)
 frame1=frame.copy()
 if not ret:
     print("Cannot receive frame")
     exit()
-if currentDateAndTime.hour<=18:#士林夜市
-    frame=blur(frame,25)
+if currentDateAndTime.hour<=18:#士林夜市#改成yolo如果判斷人數小於某個數
+    #frame=blur(frame,15)
     pass
-frame[0:120,0:800,:]=0#士林夜市
-#frame[0:147,1252:,:]=0#大稻埕
-#frame[0:74,650:1252,:]=0#大稻埕
 img=Image.fromarray(frame)
 img = transform(img.convert('RGB'))
 output = model1(img.unsqueeze(0))
