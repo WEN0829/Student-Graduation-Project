@@ -1,0 +1,102 @@
+{
+    "\u58eb\u6797\u591c\u5e02": {
+        "url": "https://www.youtube.com/watch?v=1lzlw6f3zZ8&list=PLDm4hXBol5DE9QmiOdgyzYmS2jRzenhUv&index=262",
+        "mask": [
+            [
+                0,
+                120,
+                0,
+                800
+            ]
+        ]
+    },
+    "\u5927\u7a3b\u57d5": {
+        "url": "https://www.youtube.com/watch?v=ei7DiryrrQA&list=PLDm4hXBol5DE9QmiOdgyzYmS2jRzenhUv&index=203",
+        "mask": [
+            [
+                0,
+                147,
+                1252,
+                1920
+            ],
+            [
+                0,
+                74,
+                650,
+                1252
+            ]
+        ]
+    },
+    "\u4e5d\u4efd": {
+        "url": "https://www.youtube.com/watch?v=dhs_KJBpIR8&list=PLDm4hXBol5DE9QmiOdgyzYmS2jRzenhUv&index=206",
+        "mask": [
+            [
+                0,
+                110,
+                0,
+                475
+            ],
+            [
+                1025,
+                1080,
+                0,
+                1920
+            ],
+            [
+                0,
+                1080,
+                1770,
+                1920
+            ]
+        ]
+    },
+    "\u5927\u6eaa\u8001\u8857": {
+        "url": "https://www.youtube.com/watch?v=XUWjAsajKXg&list=PLDm4hXBol5DE9QmiOdgyzYmS2jRzenhUv&index=99",
+        "mask": [
+            [
+                0,
+                42,
+                0,
+                270
+            ]
+        ]
+    },
+    "\u4e09\u5cfd\u8001\u8857": {
+        "url": "https://www.youtube.com/watch?v=nW6SvKEyQkY&list=PLDm4hXBol5DE9QmiOdgyzYmS2jRzenhUv&index=86",
+        "mask": [
+            [
+                980,
+                1080,
+                0,
+                325
+            ],
+            [
+                0,
+                100,
+                1318,
+                1920
+            ]
+        ]
+    },
+    "\u591a\u826f\u8eca\u7ad9": {
+        "url": "https://www.youtube.com/watch?v=UCG1aXVO8H8&list=PLlBCNJxYNaFzdUPNDmPbe4uXftZ8octo2&index=104",
+        "mask": [
+            [
+                0,
+                85,
+                1720,
+                1920
+            ],
+            [
+                1020,
+                1080,
+                1220,
+                1920
+            ]
+        ]
+    },
+    "\u9ad8\u7f8e\u6fd5\u5730": {
+        "url": "https://www.youtube.com/watch?v=fjhg3gAnMFg&list=PLlBCNJxYNaFzdUPNDmPbe4uXftZ8octo2&index=65",
+        "mask": []
+    }
+}

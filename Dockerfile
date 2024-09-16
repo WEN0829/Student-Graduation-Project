@@ -1,5 +1,11 @@
-FROM nginx:alpine
-WORKDIR /Student-Graduation-Project
-COPY Student-Graduation-Project ./static
-COPY nginx.conf /etc/nginx/conf.d/mysite.conf
-RUN rm /etc/nginx/conf.d/default.conf
+FROM python:3.9-alpine
+
+WORKDIR /app
+
+ADD . /app
+
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+EXPOSE 8888
+
+CMD ["python", "python_flask.py"]

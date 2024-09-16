@@ -1,12 +1,15 @@
-version: "3.9"
-
+version: '3'
 services:
-  website:
-    image: nginx:latest
-    container_name: website
-    build: 
-      context: .
-      dockerfile: Dockerfile
+  flask_app:
+    build: .
     ports:
       - "5000:5000"
-    restart: always
+    volumes:
+      - .:/app
+    command: python python_flask.py
+
+  draw_map:
+    build: .
+    volumes:
+      - .:/app
+    command: python python_draw_map.py
